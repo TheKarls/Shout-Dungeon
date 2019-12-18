@@ -1,0 +1,29 @@
+{
+  "name": "shout-dungeon",
+  "version": "1.0.0",
+  "description": "Simple rogue-like game with vocal control.",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "readline-sync": "^1.4.10",
+    "roguelike": "^0.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheKarls/shout-dungeon.git"
+  },
+  "keywords": [
+    "dungeon"
+  ],
+  "author": "Karl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheKarls/shout-dungeon/issues"
+  },
+  "homepage": "https://github.com/TheKarls/shout-dungeon#readme"
+}
