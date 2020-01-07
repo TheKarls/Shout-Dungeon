@@ -68,17 +68,17 @@ for (var y = 0; y < world.length; y++) {
     } else if (tile === 2) {
       row += chalk.white('#');
     } else if (tile === 3) {
-      row += chalk.red('/');
+      row += chalk.blueBright('/');
     } else if (tile === 4) {
       row += 'X';
     } else if (tile === 5) {
       row += chalk.yellow('a');
     } else if (tile === 6) {
-      row += '◧';
+      row += chalk.green('◧');
     } else if (tile === 7) {
-      row += 'b';
+      row += chalk.red('B');
     } else if (tile === 8) {
-      row += 'O';
+      row += chalk.greenBright('O');
     } else {
       row += world[y][x];
     }
@@ -104,6 +104,33 @@ for (var i = 1; i > 0; i++) {
     var row = '';
     for (var x = 0; x < world[y].length; x++) {
       var tile = world[y][x];
+
+
+      //Enemy movement management
+      if(tile === 7){
+        var randEnemy = Math.ceil(Math.random() * 4);
+
+        if (randEnemy === 1 && world[y - 1][x] != 2 && world[y - 1][x] != 3 && world[y - 1][x] != 6){
+          world[y][x] = 1;
+          world[y - 1][x] = 7;
+        }
+        else if (randEnemy === 2 && world[y + 1][x] != 2 && world[y + 1][x] != 3 && world[y + 1][x] != 6){
+          world[y][x] = 1;
+          world[y + 1][x] = 7;  
+        }
+        else if (randEnemy === 3 && world[y][x - 1] != 2 && world[y][x - 1] != 3 && world[y][x - 1] != 6){
+          world[y][x] = 1;
+          world[y][x - 1] = 7;
+        }
+        else if (randEnemy === 4 && world[y][x + 1] != 2 && world[y][x + 1] != 3 && world[y][x + 1] != 6){
+          world[y][x] = 1;
+          world[y][x + 1] = 7;
+        }
+
+      }
+
+
+      //Player movement
       if (tile === 5 || tile === 9) {
         if (input == 'w') {
           if (world[y - 1][x] === 7 && world[y][x] != 9) { //Game Over
@@ -116,7 +143,7 @@ for (var i = 1; i > 0; i++) {
             world[y][x] = 1;
             world[y - 1][x] = 5;
             i = -1;
-          } else if (world[y - 1][x] != 2) { //Check if the target tile isn't wall
+          } else if (world[y - 1][x] != 2) { //Check if the target tile isn't wall and movement
             world[y][x] = 1;
             if (isPowered == true){
               world[y - 1][x] = 9;
@@ -202,17 +229,17 @@ for (var i = 1; i > 0; i++) {
       } else if (tile === 2) {
         row += chalk.white('#');
       } else if (tile === 3) {
-        row += chalk.red('/');
+        row += chalk.blueBright('/');
       } else if (tile === 4) {
         row += 'X';
       } else if (tile === 5) {
         row += chalk.yellow('a');
       } else if (tile === 6) {
-        row += '◧';
+        row += chalk.green('◧');
       } else if (tile === 7) {
-        row += 'b';
+        row += chalk.red('B');
       } else if (tile === 8) {
-        row += 'O';
+        row += chalk.greenBright('O');
       } else if (tile === 9) {
         row += chalk.yellow('A');
       } else {
