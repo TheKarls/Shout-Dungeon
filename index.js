@@ -110,21 +110,34 @@ for (var i = 1; i > 0; i++) {
       if(tile === 7){
         var randEnemy = Math.ceil(Math.random() * 4);
 
-        if (randEnemy === 1 && world[y - 1][x] != 2 && world[y - 1][x] != 3 && world[y - 1][x] != 6){
+        if (randEnemy === 1 && world[y - 1][x] != 2 && world[y - 1][x] != 3 && world[y - 1][x] != 6 && world[y - 1][x] != 5 && world[y - 1][x] != 7 && world[y - 1][x] != 8 && world[y - 1][x] != 9){
           world[y][x] = 1;
           world[y - 1][x] = 7;
         }
-        else if (randEnemy === 2 && world[y + 1][x] != 2 && world[y + 1][x] != 3 && world[y + 1][x] != 6){
+        else if (randEnemy === 2 && world[y + 1][x] != 2 && world[y + 1][x] != 3 && world[y + 1][x] != 6 && world[y + 1][x] != 5 && world[y + 1][x] != 7 && world[y + 1][x] != 8 && world[y + 1][x] != 9){
           world[y][x] = 1;
           world[y + 1][x] = 7;  
         }
-        else if (randEnemy === 3 && world[y][x - 1] != 2 && world[y][x - 1] != 3 && world[y][x - 1] != 6){
+        else if (randEnemy === 3 && world[y][x - 1] != 2 && world[y][x - 1] != 3 && world[y][x - 1] != 6 && world[y][x - 1] != 5 && world[y][x - 1] != 7 && world[y][x - 1] != 8 && world[y][x - 1] != 9){
           world[y][x] = 1;
           world[y][x - 1] = 7;
         }
-        else if (randEnemy === 4 && world[y][x + 1] != 2 && world[y][x + 1] != 3 && world[y][x + 1] != 6){
+        else if (randEnemy === 4 && world[y][x + 1] != 2 && world[y][x + 1] != 3 && world[y][x + 1] != 6 && world[y][x + 1] != 5 && world[y][x + 1] != 7 && world[y][x + 1] != 8 && world[y][x + 1] != 9){
           world[y][x] = 1;
           world[y][x + 1] = 7;
+        }
+
+        else if (randEnemy === 1 && world[y - 1][x] == 5 ){
+          i = -1;
+        }
+        else if (randEnemy === 2 && world[y + 1][x] == 5){
+          i = -1;  
+        }
+        else if (randEnemy === 3 && world[y][x - 1] == 5 ){
+          i = -1;
+        }
+        else if (randEnemy === 4 && world[y][x + 1] == 5){
+          i = -1;
         }
 
       }
