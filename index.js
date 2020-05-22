@@ -228,7 +228,7 @@ for (var i = 1; i > 0; i++) {
       }
     }
   }
-
+  clear();
   // World refresh
   for (var y = 0; y < world.length; y++) {
     var row = '';
